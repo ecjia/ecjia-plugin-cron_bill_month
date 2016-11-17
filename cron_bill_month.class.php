@@ -13,7 +13,9 @@ class cron_bill_month extends cron_abstract
      * 计划任务执行方法
      */
     public function run() {
-    	_dump("aaa",1);
+    	RC_Loader::load_app_class('store_bill', 'commission', false);
+        $store_bill = new store_bill();
+        $store_bill->bill_month();
     }
     
     /**
