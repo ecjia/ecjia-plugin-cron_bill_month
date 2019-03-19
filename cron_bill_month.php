@@ -72,8 +72,9 @@ class plugin_cron_bill_month {
 }
 
 Ecjia_PluginManager::extend('cron_bill_month', function() {
+    RC_Locale::loadPluginTextdomain('cron_bill_month');
     require_once RC_Plugin::plugin_dir_path(__FILE__) . 'cron_bill_month.class.php';
-        return new cron_bill_month();
+    return new cron_bill_month();
 });
 
 RC_Plugin::register_activation_hook(__FILE__, array('plugin_cron_bill_month', 'install'));
